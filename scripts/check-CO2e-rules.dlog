@@ -1,0 +1,30 @@
+
+# CO2e value for each CF
+[?CF, eov:CO2e, ?Value] :-
+    [?CF, eo:targetUnit, eoi:kg%20CO2e] ,
+    [?CF, rdf:value, ?Value] .
+
+# Total value for each CF
+[?CF, eov:totalValue, ?TotalValue] :-
+    [?CF, eov:CO2e, ?V] ,
+    AGGREGATE (
+        [?CF, eov:sameCF, ?CF2] ,
+        [?CF, eo:sourceUnit, ?SU] ,
+        [?CF2, eo:sourceUnit, ?SU] ,
+        [?CF2, rdf:value, ?Value]
+        ON ?CF
+        BIND SUM(?Value) AS ?TotalValue
+    ) .
+
+# Other gases value for each CF
+[?CF, eov:notCO2e, ?notCO2eValue] :-
+    [?CF, eov:CO2e, ?CO2eValue] ,
+    [?CF, eov:totalValue, ?TotalValue] , 
+    BIND ( ?TotalValue - ?CO2eValue AS ?notCO2eValue ) .
+
+# Difference between CO2e and other gases for each CF
+[?CF, eov:exceededCO2e, ?diffValue] :-
+    [?CF, eov:CO2e, ?CO2eValue] ,
+    [?CF, eov:notCO2e, ?notCO2eValue] ,
+    FILTER (?notCO2eValue > ?CO2eValue) , 
+    BIND ( ?notCO2eValue - ?CO2eValue AS ?diffValue ) .

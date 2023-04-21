@@ -1,0 +1,17 @@
+# run `RDFox sandbox <root> master`
+# where <root> is the "scripts" folder
+
+exec setup-RDFox
+
+exec init-validation
+
+# Input data and ontology
+exec input
+
+# General rules
+import rules.dlog
+
+# Validation
+exec validate
+
+quit

@@ -1,0 +1,7 @@
+
+import check-$(1)-rules.dlog
+
+exec check-$(1)-queries
+
+# Explicate facts
+clear rules-explicate-facts force

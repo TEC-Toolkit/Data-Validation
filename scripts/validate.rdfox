@@ -1,0 +1,10 @@
+
+set query.answer-format text/x.tab-separated-values-abbrev
+
+# The Net CV value must always be greater than or equal to the Gross CV value
+echo "\nCheck Net CV vs. Gross CV"
+exec check CV
+
+# The sum of the other gasses must be less than (because there might be other gasses not included in the table) or equal to the kg CO2e value.
+echo "\nCheck the kg CO2e value"
+exec check CO2e

@@ -1,0 +1,3 @@
+
+ask { ?CID eov:exceededCO2e ?diffValue }
+

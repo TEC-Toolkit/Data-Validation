@@ -1,0 +1,6 @@
+
+# Import ontology
+import "ECFO/release/0.0.2/ontology.ttl"
+
+# Load converted data
+import "cfkg/BEIS-UK/2021/cf_2021.ttl"

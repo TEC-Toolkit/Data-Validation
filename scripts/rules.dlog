@@ -1,0 +1,27 @@
+
+# Based on the assumptions we discussed during our meetings
+
+# Different if different scopes
+[?CF1, eov:differentCFs, ?CF2] :-
+    [?CF1, eo:hasScope, ?Scope1] ,
+    [?CF2, eo:hasScope, ?Scope2] ,
+    FILTER (?CF1 != ?CF2) ,
+    FILTER (?Scope1 != ?Scope2) .
+
+# Different if different tags
+[?CF1, eov:differentCFs, ?CF2] :-
+    [?CF1, eo:hasScope, ?Scope1] ,
+    [?CF2, eo:hasScope, ?Scope1] ,
+    FILTER (?CF1 != ?CF2) ,
+    [?CF1, eo:hasTag, ?Tag] ,
+    NOT [?CF2, eo:hasTag, ?Tag] .
+
+# Symmetry
+[?CF2, eov:differentCFs, ?CF1] :-
+    [?CF1, eov:differentCFs, ?CF2] .
+
+# Same if not different
+[?CF1, eov:sameCF, ?CF2] :-
+    eo:EmissionConversionFactor[?CF1] ,
+    eo:EmissionConversionFactor[?CF2] ,
+    NOT [?CF1, eov:differentCFs, ?CF2] .

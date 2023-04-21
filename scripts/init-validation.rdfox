@@ -1,0 +1,3 @@
+
+# Set directories
+set dir.facts "$(dir.root)../"
