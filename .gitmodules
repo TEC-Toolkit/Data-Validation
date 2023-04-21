@@ -1,0 +1,3 @@
+[submodule "ECFO"]
+	path = ECFO
+	url = https://github.com/TEC-Toolkit/ECFO
