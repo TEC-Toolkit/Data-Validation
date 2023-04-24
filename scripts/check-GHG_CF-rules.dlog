@@ -1,0 +1,5 @@
+
+# Find negative Conversion Factors
+[?CF, eov:negativeCF, ?V] :-
+    [?CF, rdf:value, ?V] ,
+    FILTER (?V < 0) .
