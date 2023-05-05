@@ -10,11 +10,10 @@
 
 # Different if different tags
 [?CF1, eov:differentCFs, ?CF2] :-
-    [?CF1, eo:hasScope, ?Scope1] ,
-    [?CF2, eo:hasScope, ?Scope1] ,
+    [?CF1, eo:hasEmissionSource, ?Source1] ,
+    [?CF2, eo:hasEmissionSource, ?Source2] ,
     FILTER (?CF1 != ?CF2) ,
-    [?CF1, eo:hasTag, ?Tag] ,
-    NOT [?CF2, eo:hasTag, ?Tag] .
+    FILTER (?Source1 != ?Source2) .
 
 # Symmetry
 [?CF2, eov:differentCFs, ?CF1] :-

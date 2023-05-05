@@ -2,10 +2,8 @@
 # Find conflicting Conversion Factors
 [?CF1, eov:conflictingCF, ?CF2] :-
     [?CF1, eov:sameCF, ?CF2] ,
-    # [?CF1, eo:sourceUnit, eoi:kWh_Net_CV] ,
-    # [?CF2, eo:sourceUnit, eoi:kWh_Gross_CV] ,
-    [?CF1, eo:sourceUnit, eoi:kWh%20%28Net%20CV%29] ,
-    [?CF2, eo:sourceUnit, eoi:kWh%20%28Gross%20CV%29] ,
+    [?CF1, eo:hasAdditionalContext,  "Energy - Net CV"@en ] ,
+    [?CF2, eo:hasAdditionalContext, "Energy - Gross CV"@en ] ,
     [?CF1, eo:targetUnit, ?TU] ,
     [?CF2, eo:targetUnit, ?TU] ,
     [?CF1, rdf:value, ?V1] ,
