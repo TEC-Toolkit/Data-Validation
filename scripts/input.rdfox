@@ -3,4 +3,11 @@
 import "ECFO/release/1.0.0/ontology.ttl"
 
 # Load converted data
-import "cfkg/BEIS-UK/2021/cf_2021.ttl"
+import "cfkg/BEIS-UK/graphs/ttl/out_cf_2016_v2.ttl"
+import "cfkg/BEIS-UK/graphs/ttl/out_cf_2017_v2.ttl"
+import "cfkg/BEIS-UK/graphs/ttl/out_cf_2018_v2.ttl"
+import "cfkg/BEIS-UK/graphs/ttl/out_cf_2019_v2.ttl"
+import "cfkg/BEIS-UK/graphs/ttl/out_cf_2020_v2.ttl"
+import "cfkg/BEIS-UK/graphs/ttl/out_cf_2021_v2.ttl"
+import "cfkg/BEIS-UK/graphs/ttl/out_cf_2022_v2.ttl"
+import "cfkg/BEIS-UK/graphs/ttl/out_cf_ml_calc_v2.ttl"
