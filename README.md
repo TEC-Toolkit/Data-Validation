@@ -4,7 +4,7 @@ This repository contains the data validation module for the TEC Toolkit.
 
 ## Prerequisites
 
-- [RDFox](https://www.oxfordsemantic.tech) (>5.5) [^NB]
+- [RDFox](https://www.oxfordsemantic.tech) (> v.6) [^NB]
 
 [^NB]: RDFox is a commercial product, but anyone with a corporate email address can request a free RDFox trial license.
 Moreover, Oxford Semantic Technologies offers research licenses for free to accredited entities.
