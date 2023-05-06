@@ -2,7 +2,11 @@
 
 This repository contains the data validation module for the TEC Toolkit.
 
-## Prerequisites
+## Getting Started
+
+These instructions explain how to run and customise the Data Validation module.
+
+### Prerequisites
 
 - [RDFox](https://www.oxfordsemantic.tech) (> v.6) [^NB]
 
@@ -11,7 +15,7 @@ Moreover, Oxford Semantic Technologies offers research licenses for free to accr
 
 In the following, we assume that it is installed and added to the PATH.
 
-## Running (RDFox)
+### Running (RDFox)
 
 The main entry point is the `master` script.
 
@@ -25,19 +29,37 @@ RDFox sandbox <root> master
 
 where `<root>` is the "scripts" folder (`.` if you are inside it).
 
-## Operations
+### Functionalities
 
-### Check if the data are "valid"
+#### Check if the data are "valid"
 
 1. [Run the data validation module](#running-rdfox)
 2. Check that all queries have **0** answers
 
-### Add another validation check
+#### Add another validation check
 
 1. Add a file "check-CUSTOM_NAME-rules" with the rules to check
 2. Add a file "check-CUSTOM_NAME-queries" with the `ASK` queries
    - Note that the queries must return no answer if the check is passed
 3. Add a new command `exec check CUSTOM_NAME` in the "validate" file
+
+<!-- ## Deployment
+
+Add additional notes about how to deploy this on a live system
+
+## Built With
+
+## Contributing
+
+Please read [CONTRIBUTING.md](...) for details on our code of conduct, and the process for submitting pull requests to us.
+
+## Versioning
+
+## Authors -->
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgments
 
