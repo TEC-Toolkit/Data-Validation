@@ -1,26 +1,15 @@
-
-# Based on the assumptions we discussed during our meetings
-
-# Different if different scopes
-[?CF1, eov:differentCFs, ?CF2] :-
-    [?CF1, eo:hasScope, ?Scope1] ,
-    [?CF2, eo:hasScope, ?Scope2] ,
-    FILTER (?CF1 != ?CF2) ,
-    FILTER (?Scope1 != ?Scope2) .
-
-# Different if different tags
-[?CF1, eov:differentCFs, ?CF2] :-
-    [?CF1, eo:hasEmissionSource, ?Source1] ,
-    [?CF2, eo:hasEmissionSource, ?Source2] ,
-    FILTER (?CF1 != ?CF2) ,
-    FILTER (?Source1 != ?Source2) .
-
-# Symmetry
-[?CF2, eov:differentCFs, ?CF1] :-
-    [?CF1, eov:differentCFs, ?CF2] .
-
-# Same if not different
+# Same if same:
+# - Scope
+# - Emission Source
+# - Applicable Location
+# - Applicable Period
 [?CF1, eov:sameCF, ?CF2] :-
-    eo:EmissionConversionFactor[?CF1] ,
-    eo:EmissionConversionFactor[?CF2] ,
-    NOT [?CF1, eov:differentCFs, ?CF2] .
+    [?CF1, ecfo:hasScope, ?Scope] ,
+    [?CF2, ecfo:hasScope, ?Scope] ,
+    [?CF1, ecfo:hasEmissionSource, ?EmissionSource] ,
+    [?CF2, ecfo:hasEmissionSource, ?EmissionSource] ,
+    [?CF1, ecfo:hasApplicableLocation, ?ApplicableLocation] ,
+    [?CF2, ecfo:hasApplicableLocation, ?ApplicableLocation] ,
+    [?CF1, ecfo:hasApplicablePeriod, ?ApplicablePeriod] ,
+    [?CF2, ecfo:hasApplicablePeriod, ?ApplicablePeriod] ,
+    FILTER (?CF1 != ?CF2) .

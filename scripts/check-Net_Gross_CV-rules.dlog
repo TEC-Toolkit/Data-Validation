@@ -1,11 +1,13 @@
 
 # Find conflicting Conversion Factors
-[?CF1, eov:conflictingCF, ?CF2] :-
-    [?CF1, eov:sameCF, ?CF2] ,
-    [?CF1, eo:hasAdditionalContext,  "Energy - Net CV"@en ] ,
-    [?CF2, eo:hasAdditionalContext, "Energy - Gross CV"@en ] ,
-    [?CF1, eo:targetUnit, ?TU] ,
-    [?CF2, eo:targetUnit, ?TU] ,
-    [?CF1, rdf:value, ?V1] ,
-    [?CF2, rdf:value, ?V2],
+[?CF_Net, eov:conflictingCF, ?CF_Gross] :-
+    [?CF_Net, eov:sameCF, ?CF_Gross] ,
+    [?CF_Net, ecfo:hasAdditionalContext,  "Energy - Net CV"@en ] ,
+    [?CF_Gross, ecfo:hasAdditionalContext, "Energy - Gross CV"@en ] ,
+    [?CF_Net, ecfo:hasEmissionTarget, ?ET] ,
+    [?CF_Gross, ecfo:hasEmissionTarget, ?ET] ,
+    [?CF_Net, ecfo:hasTargetUnit, ?TU] ,
+    [?CF_Gross, ecfo:hasTargetUnit, ?TU] ,
+    [?CF_Net, rdf:value, ?V1] ,
+    [?CF_Gross, rdf:value, ?V2],
     FILTER (?V1 < ?V2) .

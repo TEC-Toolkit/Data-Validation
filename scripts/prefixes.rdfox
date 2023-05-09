@@ -1,10 +1,9 @@
 
 # Our own prefixes
 
-base <https://w3id.org/okn/o/eo>
-
-prefix eo: <https://w3id.org/okn/o/eo#>
-prefix eoi: <https://w3id.org/okn/i/eo/>
-prefix eov: <https://w3id.org/okn/v/eo/>
+prefix ecfo: <https://w3id.org/ecfo#>
+prefix eov: <https://w3id.org/ecfkg/v/>
 
 # External prefixes
+
+prefix wde: <http://www.wikidata.org/entity/>
