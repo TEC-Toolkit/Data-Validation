@@ -64,3 +64,13 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Acknowledgments
 
 Some parts have been adapted from the [PRObs system](https://github.com/probs-lab) (by the [UK FIRES project](https://ukfires.org)).
+
+---
+
+<div style="text-align: center">
+
+  This tool is part of the [TEC-Toolkit](https://github.com/TEC-Toolkit).
+
+  <img src="https://tec-toolkit.github.io/assets/Logo%20TEC.svg" alt="TEC-Toolkit Logo" width=10%/>
+
+</div>
